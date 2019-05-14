@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!--Konfigurasi default yang digunakan oleh semua koneksi yang tujuannya tidak tercakup oleh domain-config.-->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <!--Konfigurasi yang digunakan untuk koneksi ke tujuan tertentu-->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true"> 127.0.01.1 </domain>
+    </domain-config>
+
+</network-security-config>

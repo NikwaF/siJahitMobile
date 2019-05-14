@@ -28,7 +28,7 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
     private Button btnlogin,btnregister;
     private EditText txtemail, txtpassword;
-    private String url_login = "http://192.168.43.115/sijahit/api/login_customer";
+    private String url_login = "http://192.168.43.59/sijahit/api/login_customer";
     private TextView erroremail;
 
     @Override

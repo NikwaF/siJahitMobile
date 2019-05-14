@@ -109,7 +109,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="10dp"
-        android:background="@drawable/button_masuk"
+        android:background="@drawable/gh"
         android:text="MASUK"
         android:textColor="#3e2723"
         app:layout_constraintEnd_toEndOf="parent"
