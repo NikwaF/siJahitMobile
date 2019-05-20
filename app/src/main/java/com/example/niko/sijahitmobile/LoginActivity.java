@@ -43,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         erroremail = (TextView)findViewById(R.id.errorEmail) ;
         sessionManager = new SessionManager(this);
         btnlogin = (Button)findViewById(R.id.btn_login);
+        btnregister = findViewById(R.id.btn_registrasi);
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +55,15 @@ public class LoginActivity extends AppCompatActivity {
                     erroremail.setVisibility(View.GONE);
                     Login();
                 }
+            }
+        });
+
+        btnregister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 

@@ -7,6 +7,7 @@
     tools:context=".SplashScreen"
     android:background="@drawable/buat_background">
 
+<<<<<<< HEAD
     <ImageView
         android:id="@+id/logo"
         android:layout_width="220dp"
@@ -18,6 +19,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+=======
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="244dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="serif"
+        android:text="Welcome to"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+>>>>>>> 4b51dcc65c73fda568bb9879c2c2e278a2724fd8
 
     <TextView
         android:layout_width="match_parent"
