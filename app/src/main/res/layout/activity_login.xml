@@ -4,14 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    android:background="@drawable/buat_background"
-    tools:context=".LoginActivity">
-
-    <TextView
-        android:id="@+id/errorEmail"
-        android:layout_width="320dp"
-=======
     tools:context=".LoginActivity"
     android:background="@drawable/buat_background">
 
@@ -20,17 +12,15 @@
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/errorEmail"
         android:layout_width="match_parent"
->>>>>>> 4b51dcc65c73fda568bb9879c2c2e278a2724fd8
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@drawable/error_massage_login"
@@ -49,19 +39,11 @@
 
     <EditText
         android:id="@+id/txtemail"
-<<<<<<< HEAD
-        android:layout_width="320dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="10dp"
-=======
         android:layout_width="match_parent"
         android:layout_height="51dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
->>>>>>> 4b51dcc65c73fda568bb9879c2c2e278a2724fd8
         android:background="@drawable/button_input_login"
         android:drawableLeft="@drawable/ic_person"
         android:drawablePadding="15dp"
@@ -75,23 +57,15 @@
         android:textColorLink="#efebe9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
         android:id="@+id/txtpassword"
-<<<<<<< HEAD
-        android:layout_width="320dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="10dp"
-=======
         android:layout_width="match_parent"
         android:layout_height="51dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="24dp"
->>>>>>> 4b51dcc65c73fda568bb9879c2c2e278a2724fd8
         android:background="@drawable/button_input_login"
         android:drawableLeft="@drawable/ic_lock"
         android:drawablePadding="15dp"
@@ -127,11 +101,7 @@
 
     <Button
         android:id="@+id/btn_login"
-<<<<<<< HEAD
-        android:layout_width="320dp"
-=======
         android:layout_width="match_parent"
->>>>>>> 4b51dcc65c73fda568bb9879c2c2e278a2724fd8
         android:layout_height="46dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
@@ -147,20 +117,11 @@
 
     <Button
         android:id="@+id/btn_registrasi"
-<<<<<<< HEAD
-        android:layout_width="320dp"
-=======
         android:layout_width="match_parent"
->>>>>>> 4b51dcc65c73fda568bb9879c2c2e278a2724fd8
         android:layout_height="46dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
-<<<<<<< HEAD
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="8dp"
-=======
         android:layout_marginEnd="24dp"
->>>>>>> 4b51dcc65c73fda568bb9879c2c2e278a2724fd8
         android:background="@drawable/button_registrasi"
         android:fontFamily="@font/montserratregular"
         android:text="REGISTRASI"
