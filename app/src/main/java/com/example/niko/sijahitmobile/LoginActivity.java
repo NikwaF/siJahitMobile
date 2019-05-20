@@ -28,7 +28,7 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
     private Button btnlogin,btnregister;
     private EditText txtemail, txtpassword;
-    private String url_login = "http://192.168.43.115/sijahit/api/login_customer";
+    private String url_login = "http://10.0.3.2/sijahit/api/login_customer";
     private TextView erroremail;
 
     @Override
@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         btnlogin = (Button)findViewById(R.id.btn_login);
+        btnregister = findViewById(R.id.btn_registrasi);
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +54,15 @@ public class LoginActivity extends AppCompatActivity {
                     erroremail.setVisibility(View.GONE);
                     Login();
                 }
+            }
+        });
+
+        btnregister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 

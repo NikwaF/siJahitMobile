@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
+        android:layout_width="150dp"
+        android:layout_height="130dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="8dp"
@@ -21,7 +21,7 @@
 
     <TextView
         android:id="@+id/errorEmail"
-        android:layout_width="367dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -40,34 +40,34 @@
 
 
     <EditText
-        android:fontFamily="@font/montserratregular"
         android:id="@+id/txtemail"
-        android:layout_width="367dp"
+        android:layout_width="match_parent"
         android:layout_height="51dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="36dp"
-        android:textColorHighlight="#fff"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/button_input_login"
         android:drawableLeft="@drawable/ic_person"
         android:drawablePadding="15dp"
+        android:fontFamily="@font/montserratregular"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:textColorHint="#efebe9"
-        android:textColorLink="#efebe9"
         android:padding="15dp"
         android:textColor="#FFF"
+        android:textColorHighlight="#fff"
+        android:textColorHint="#efebe9"
+        android:textColorLink="#efebe9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
         android:id="@+id/txtpassword"
-        android:layout_width="367dp"
+        android:layout_width="match_parent"
         android:layout_height="51dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/button_input_login"
         android:drawableLeft="@drawable/ic_lock"
         android:drawablePadding="15dp"
@@ -102,14 +102,14 @@
 
 
     <Button
-        android:fontFamily="@font/montserratregular"
         android:id="@+id/btn_login"
-        android:layout_width="356dp"
+        android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/button_masuk"
+        android:fontFamily="@font/montserratregular"
         android:text="MASUK"
         android:textColor="#3e2723"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,14 +118,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:fontFamily="@font/montserratregular"
         android:id="@+id/btn_registrasi"
-        android:layout_width="356dp"
+        android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/button_registrasi"
+        android:fontFamily="@font/montserratregular"
         android:text="REGISTRASI"
         android:textColor="#efebe9"
         app:layout_constraintEnd_toEndOf="parent"

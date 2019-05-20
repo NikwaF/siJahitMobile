@@ -31,7 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
     Button btnRegister;
     EditText namaUser, noHp, Email, Password, Confirm, Desa, Kecamatan, Kelurahan, kodePos, detailAlamat;
     private String namauser, nohp, email, password, confirm, desa, kecamatan, kelurahan, kodepos, detailalamat;
-    private String url_register = "http://192.168.43.80/sijahit/api/Register_customer";
+    private String url_register = "http://10.0.3.2/sijahit/api/register_customer";
     //private static final String KEY_STATUS = "status";
     private static final String KEY_NAMA_USER = "nama_customer";
     private static final String KEY_NO_HP = "no_hp";
@@ -77,6 +77,7 @@ public class RegisterActivity extends AppCompatActivity {
                 kelurahan = Kelurahan.getText().toString().trim();
                 kodepos = kodePos.getText().toString().trim();
                 detailalamat = detailAlamat.getText().toString().trim();
+
                 if (validateInputs()) {
                     registerUser();
                 }
@@ -94,128 +95,121 @@ public class RegisterActivity extends AppCompatActivity {
             return false;
         }
 
-        if (TextUtils.isEmpty(nohp)) {
+        else if (TextUtils.isEmpty(nohp)) {
             noHp.setError("Masukkan No Hp Anda !");
             noHp.requestFocus();
             return false;
         }
 
-        if (TextUtils.isEmpty(email)) {
+        else if (TextUtils.isEmpty(email)) {
             Email.setError("Masukkan Email Anda !");
             Email.requestFocus();
             return false;
         }
 
-        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             Email.setError("Penulisan Email Harus Benar !");
             Email.requestFocus();
             return false;
         }
 
-        if (TextUtils.isEmpty(password)) {
+        else if (TextUtils.isEmpty(password)) {
             Password.setError("Masukkan Password Anda !");
             Password.requestFocus();
             return false;
         }
 
-        if (TextUtils.isEmpty(confirm)) {
+        else if (TextUtils.isEmpty(confirm)) {
             Confirm.setError("Masukkan Konfirmasi Password !");
             Confirm.requestFocus();
             return false;
         }
-        if (!password.equals(confirm)){
+        else if (!password.equals(confirm)){
             Confirm.setError("Password Harus Sesuai !");
             Confirm.requestFocus();
             return false;
         }
-        if (TextUtils.isEmpty(desa)) {
+        else if (TextUtils.isEmpty(desa)) {
             Desa.setError("Masukkan Desa Anda");
             Desa.requestFocus();
             return false;
         }
-        if (TextUtils.isEmpty(kecamatan)) {
+        else if (TextUtils.isEmpty(kecamatan)) {
             Kecamatan.setError("Masukkan Kecamatan Anda !");
             Kecamatan.requestFocus();
             return false;
         }
-        if (TextUtils.isEmpty(kelurahan)){
+        else if (TextUtils.isEmpty(kelurahan)){
             Kelurahan.setError("Masukkan Kelurahan Anda !");
             Kelurahan.requestFocus();
             return false;
         }
-        if (TextUtils.isEmpty(kodepos)) {
+        else if (TextUtils.isEmpty(kodepos)) {
             kodePos.setError("Masukkan Kode Pos Anda !");
             kodePos.requestFocus();
             return false;
         }
-        if (TextUtils.isEmpty(detailalamat)) {
+        else if (TextUtils.isEmpty(detailalamat)) {
             detailAlamat.setError("Masukkan Kecamatan Anda !");
             detailAlamat.requestFocus();
             return false;
 
         }
-        return false;
+        else {
+            return true;
+        }
+
     }
     private void registerUser() {
-
-        JSONObject request = new JSONObject();
-        try {
-            //Populate the request parameters
-            request.put(KEY_NAMA_USER, namauser);
-            request.put(KEY_NO_HP, nohp);
-            request.put(KEY_EMAIL, email);
-            request.put(KEY_PASSWORD, password);
-            request.put(KEY_DESA, desa);
-            request.put(KEY_KECAMATAN, kecamatan);
-            request.put(KEY_KELURAHAN, kelurahan);
-            request.put(KEY_KODEPOS, kodepos);
-            request.put(KEY_DETAILALAMAT, detailalamat);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        JsonObjectRequest jsArrayRequest = new JsonObjectRequest
-                (Request.Method.POST, url_register, request, new Response.Listener<JSONObject>() {
+        StringRequest request = new StringRequest(Request.Method.POST, url_register,
+                new Response.Listener<String>() {
                     @Override
-                    public void onResponse(JSONObject response) {
+                    public void onResponse(String response) {
                         try {
-                            //Check if user got registered successfully
-                            JSONObject jsonObject = new JSONObject((Map) response);
+                            JSONObject jsonObject = new JSONObject(response);
+                            System.out.println(response);
                             System.out.println(jsonObject);
-                            String response_register = jsonObject.getString("status");
+                            String register_respon = jsonObject.getString("status");
 
-                            if(response_register.equals("false")){
-                                Toast.makeText(RegisterActivity.this, "Email di pakai", Toast.LENGTH_SHORT).show();
-                            } else {
-                                if (response_register.equals("false")) {
-//                                    erroremail.setText("Email Anda belum Terdaftar, Silahkan Daftar dulu!!");
-//                                    erroremail.setVisibility(View.VISIBLE);
-                                    Toast.makeText(RegisterActivity.this, "Registrasi gagal!", Toast.LENGTH_SHORT).show();
-                                } else {
-                                    Toast.makeText(RegisterActivity.this, "Register Berhasil", Toast.LENGTH_SHORT).show();
-                                }
+                            if(register_respon.equals("0")){
+                                Toast.makeText(RegisterActivity.this,"email sudah pernah dipakai!",Toast.LENGTH_SHORT).show();
+
+                            }
+                            if(register_respon.equals("1")){
+                                Toast.makeText(RegisterActivity.this,"Registrasi gagal! silahkan tunggu beberapa saat",Toast.LENGTH_SHORT).show();
+                                // Toast.makeText(LoginActivity.this,"Password Anda Salah!",Toast.LENGTH_SHORT).show();
+                            }
+                            if(register_respon.equals("2")){
+                                Toast.makeText(RegisterActivity.this,"Registrasi berhasil",Toast.LENGTH_SHORT).show();
+                                //  Toast.makeText(LoginActivity.this,"Anda Belum Mendaftar, Silahkan Daftar dulu!",Toast.LENGTH_SHORT).show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
                 }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
 
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-
-                    }
-                })
+            }
+        })
         {
             @Override
             protected Map<String, String> getParams(){
                 Map<String,String> params = new HashMap<String, String>();
+                params.put("nama",namauser);
+                params.put("no_hp",nohp);
+                params.put("password",password);
+                params.put("desa",desa);
+                params.put("kecamatan",kecamatan);
+                params.put("kode_pos",kodepos);
+                params.put("detail_alamat",detailalamat);
                 params.put("email",email);
-                params.put("password", password);
+                params.put("kelurahan",kelurahan);
                 return params;
             }
         };
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(jsArrayRequest);
+        requestQueue.add(request);
     }
 }
