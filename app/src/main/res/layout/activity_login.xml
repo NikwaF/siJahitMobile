@@ -4,69 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:background="@drawable/buat_background">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:background="@drawable/buat_background"
+    tools:context=".LoginActivity">
 
     <TextView
         android:id="@+id/errorEmail"
-        android:layout_width="367dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="4dp"
+        android:background="@drawable/error_massage_login"
         android:fontFamily="@font/montserratlight"
-        android:textColor="#fafafa"
-        android:textSize="18sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/txtemail"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textAlignment="center"
+        android:textColor="#9a765c"
+        android:textSize="13sp"
+        android:padding="5dp"
+        android:text="Email Anda belum Terdaftar\n Silahkan Daftar dulu!!"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/txtpassword"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/txtemail"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="@+id/txtpassword"
+        app:layout_constraintTop_toBottomOf="@+id/txtpassword" />
 
 
     <EditText
-        android:fontFamily="@font/montserratregular"
         android:id="@+id/txtemail"
-        android:layout_width="367dp"
+        android:layout_width="320dp"
         android:layout_height="51dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="36dp"
-        android:textColorHighlight="#fff"
+        android:layout_marginTop="176dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/button_input_login"
         android:drawableLeft="@drawable/ic_person"
         android:drawablePadding="15dp"
+        android:fontFamily="@font/montserratregular"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:textColorHint="#efebe9"
-        android:textColorLink="#efebe9"
         android:padding="15dp"
         android:textColor="#FFF"
+        android:textColorHighlight="#fff"
+        android:textColorHint="#efebe9"
+        android:textColorLink="#efebe9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtpassword"
-        android:layout_width="367dp"
+        android:layout_width="320dp"
         android:layout_height="51dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/button_input_login"
         android:drawableLeft="@drawable/ic_lock"
@@ -84,32 +71,32 @@
         app:layout_constraintTop_toBottomOf="@+id/txtemail" />
 
     <TextView
-        android:fontFamily="@font/montserratregular"
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
+        android:fontFamily="@font/montserratregular"
         android:text="Lupa Password?"
         android:textAlignment="center"
-        android:textColorHint="#efebe9"
         android:textColor="#efebe9"
+        android:textColorHint="#efebe9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtpassword" />
+        app:layout_constraintTop_toBottomOf="@+id/errorEmail" />
 
 
     <Button
-        android:fontFamily="@font/montserratregular"
         android:id="@+id/btn_login"
-        android:layout_width="356dp"
+        android:layout_width="320dp"
         android:layout_height="46dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/button_masuk"
+        android:fontFamily="@font/montserratregular"
         android:text="MASUK"
         android:textColor="#3e2723"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,20 +105,23 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:fontFamily="@font/montserratregular"
         android:id="@+id/btn_registrasi"
-        android:layout_width="356dp"
+        android:layout_width="320dp"
         android:layout_height="46dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/button_registrasi"
+        android:fontFamily="@font/montserratregular"
         android:text="REGISTRASI"
         android:textColor="#efebe9"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_login"
+        app:layout_constraintVertical_bias="0.086" />
 
 
 </android.support.constraint.ConstraintLayout>

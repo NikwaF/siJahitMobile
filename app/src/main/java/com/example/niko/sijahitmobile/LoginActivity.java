@@ -19,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -28,8 +29,9 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
     private Button btnlogin,btnregister;
     private EditText txtemail, txtpassword;
-    private String url_login = "http://192.168.43.115/sijahit/api/login_customer";
+    private String url_login = "http://10.0.3.2/sijahit/api/login_customer";
     private TextView erroremail;
+    SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         txtemail = (EditText)findViewById(R.id.txtemail);
         txtpassword = (EditText)findViewById(R.id.txtpassword);
         erroremail = (TextView)findViewById(R.id.errorEmail) ;
-
-
+        sessionManager = new SessionManager(this);
         btnlogin = (Button)findViewById(R.id.btn_login);
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +73,15 @@ public class LoginActivity extends AppCompatActivity {
                             System.out.println(jsonObject);
                             String response_login = jsonObject.getString("kode");
 
+
                             if(response_login.equals("1")){
+                                String nama = jsonObject.getJSONObject("data").getString("nama");
+                                String id = jsonObject.getJSONObject("data").getString("id");
+                                String email = jsonObject.getJSONObject("data").getString("email");
+                                String no_hp = jsonObject.getJSONObject("data").getString("no_hp");
+
+                                sessionManager.buatSession(id,nama,email,no_hp);
+
                                 gas_customer();
                             }
                             if(response_login.equals("2")){
