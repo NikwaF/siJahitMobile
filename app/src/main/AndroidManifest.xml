@@ -21,8 +21,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".Dasboard_menu" />
         <activity android:name=".Dashboard_menu_pengukur" />
-        <activity android:name=".RegisterActivity">
-        </activity>
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".ProfileAct"></activity>
     </application>
 
 </manifest>

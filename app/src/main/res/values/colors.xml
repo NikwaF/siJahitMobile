@@ -3,4 +3,10 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="black">#000000</color>
+
+    <color name="coklattua">#301710</color>
+    <color name="coklatmuda">#ff850c</color>
+    <color name="white">#fff</color>
+    <color name="coklat1">#7A3703</color>
 </resources>
